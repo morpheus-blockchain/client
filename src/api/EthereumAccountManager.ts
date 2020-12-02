@@ -22,7 +22,7 @@ class EthereumAccountManager extends EventEmitter {
     if (isProd) {
       url =
         localStorage.getItem('XDAI_RPC_ENDPOINT') ||
-        'https://gwan-ssl.wandevs.org:46891';
+        'https://gwan-ssl.wandevs.org:56891';
     } else {
       url = 'http://localhost:8545';
     }
@@ -54,7 +54,7 @@ class EthereumAccountManager extends EventEmitter {
       const newProvider = new providers.JsonRpcProvider(this.rpcURL);
       if (process.env.NODE_ENV === 'production') {
         if ((await newProvider.getNetwork()).chainId !== XDAI_CHAIN_ID) {
-          throw new Error('not a valid xDAI RPC URL');
+          throw new Error('not a valid WAN RPC URL');
         }
       }
       this.provider = newProvider;
@@ -68,7 +68,7 @@ class EthereumAccountManager extends EventEmitter {
       this.emit('ChangedRPCEndpoint');
     } catch (e) {
       console.error(`error setting rpc endpoint: ${e}`);
-      this.setRpcEndpoint('https://gwan-ssl.wandevs.org:46891');
+      this.setRpcEndpoint('https://gwan-ssl.wandevs.org:56891');
       return;
     }
   }

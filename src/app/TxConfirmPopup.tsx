@@ -179,7 +179,7 @@ export function TxConfirmPopup({ match }: RouteComponentProps) {
             <div>
               <b>HAT Level</b>
               <span>
-                {hatLevel} ({hatCost} xDAI)
+                {hatLevel} ({hatCost} WAN)
               </span>
             </div>
           </>
@@ -229,11 +229,11 @@ export function TxConfirmPopup({ match }: RouteComponentProps) {
         </div>
         <div>
           <b>Total Transaction Cost</b>
-          <span>{txCost.toFixed(8)} xDAI</span>
+          <span>{txCost.toFixed(8)} WAN</span>
         </div>
         <div className='mtop'>
           <b>Account Balance</b>
-          <span>{parseFloat(balance).toFixed(8)} xDAI</span>
+          <span>{parseFloat(balance).toFixed(8)} WAN</span>
         </div>
         <div className='mtop'>
           <Button onClick={doReject}>
@@ -249,7 +249,7 @@ export function TxConfirmPopup({ match }: RouteComponentProps) {
       <div>
         <div>
           <span>
-            <ConfirmIcon /> DF connected to xDAI
+            <ConfirmIcon /> DF connected to WAN
           </span>
           <span>
             Auto-confirm {'txs under $0.01'} for 24 hours{' '}

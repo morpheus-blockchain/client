@@ -110,11 +110,11 @@ export function HatPane({ hook }: { hook: ModalHook }) {
         </div>
         <div>
           <Sub>Current Balance</Sub>
-          <span>{balance} xDAI</span>
+          <span>{balance} WAN</span>
         </div>
         <div>
           <a onClick={() => window.open('https://blog.zkga.me/df-04-faq')}>
-            <u>Get More xDAI</u>
+            <u>Get More WAN</u>
           </a>
         </div>
         <div>

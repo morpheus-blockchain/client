@@ -63,7 +63,7 @@ function TutorialPaneContent({
   } else if (tutorialState === TutorialState.Deselect) {
     return (
       <div>
-        Congrats, you've submitted a move to xDAI! Moves that are in the mempool
+        Congrats, you've submitted a move to WAN! Moves that are in the mempool
         are shown as dotted lines. Accepted moves are shown as solid lines.
         <br />
         <br />

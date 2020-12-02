@@ -189,10 +189,10 @@ export default function GameLandingPage(_props: { replayMode: boolean }) {
       TerminalTextStyle.Blue
     );
 
-    terminalEmitter.print('Connecting to Ethereum L2');
+    terminalEmitter.print('Connecting to Wanchain Mainnet');
     await animEllipsis();
     terminalEmitter.print(' ');
-    terminalEmitter.println('Connected to xDAI STAKE.', TerminalTextStyle.Blue);
+    terminalEmitter.println('Connected to WAN STAKE.', TerminalTextStyle.Blue);
 
     terminalEmitter.print('Installing flux capacitor');
     await animEllipsis();
@@ -260,16 +260,16 @@ export default function GameLandingPage(_props: { replayMode: boolean }) {
     await animEllipsis();
     terminalEmitter.print(' ');
     terminalEmitter.printLink(
-      'ERROR: Gas prices is expensive :)',
+      'Network OK',
       () => setModal(ModalState.GAS_PRICES),
       TerminalTextStyle.White
     );
     terminalEmitter.newline();
-    terminalEmitter.print('Falling back to Testnet');
+    terminalEmitter.print('Connect to Wanchain Mainnet');
     await animEllipsis();
     terminalEmitter.print(' ');
     terminalEmitter.println(
-      'Connected to Wanchain testnet.',
+      'Connected to Wanchain Mainnet.',
       TerminalTextStyle.White
     );
 
@@ -608,7 +608,7 @@ export default function GameLandingPage(_props: { replayMode: boolean }) {
     const terminalEmitter = TerminalEmitter.getInstance();
 
     terminalEmitter.println(
-      'Downloading data from Ethereum blockchain... (the contract is very big. this may take a while)'
+      'Downloading data from Wanchain Mainnet blockchain... (the contract is very big. this may take a while)'
     );
 
     const newGameManager: AbstractGameManager = await GameManager.create();

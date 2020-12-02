@@ -46,7 +46,7 @@ export function HelpPane({ hook }: { hook: ModalHook }) {
       <HelpWrapper>
         <p className='title'>Patch Notes</p>
         <ul>
-          <li>Made game initialization more stable for higher loads on xDAI</li>
+          <li>Made game initialization more stable for higher loads on WAN</li>
           <li>
             Added "high performance" mode to settings - this will draw slightly
             fewer things on the UI, allowing the client to run faster for

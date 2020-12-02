@@ -199,7 +199,7 @@ class TxExecutor extends EventEmitter {
       if (balance < 0.002) {
         const notifsManager = NotificationManager.getInstance();
         notifsManager.balanceEmpty();
-        throw new Error('xDAI balance too low!');
+        throw new Error('WAN balance too low!');
       }
 
       if (Date.now() - this.nonceLastUpdated > 30000) {
