@@ -83,7 +83,7 @@ export function SharePlanet({ match }: RouteComponentProps) {
               </p>
             </p>
             <p>
-              Find this planet in-game at <a href='/'>https://dfwan.xyz</a> to read
+              Find this planet in-game at <a href='/'>https://dark-forest.wandevs.org</a> to read
               more!
             </p>
           </div>

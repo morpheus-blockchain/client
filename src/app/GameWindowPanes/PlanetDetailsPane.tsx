@@ -292,7 +292,7 @@ export function PlanetDetailsPane({
       selected?.planetLevel
     } planet named ${getPlanetName(
       selected
-    )}! @darkforest_eth (https://zkga.me/planet${selected?.locationId})`;
+    )}! @wanchain_org (https://dark-forest.wandevs.org/planet${selected?.locationId})`;
     window.open(
       `https://twitter.com/intent/tweet?text=${encodeURI(
         str
