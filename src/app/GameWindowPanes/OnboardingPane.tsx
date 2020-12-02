@@ -48,7 +48,7 @@ enum OnboardState {
 
 function OnboardMoney({ advance }: { advance: () => void }) {
   const account = useContext<EthAddress | null>(AccountContext);
-  const explorerAddressLink = `https://blockscout.com/poa/xdai/address/${account}`;
+  const explorerAddressLink = `https://www.wanscan.org/address/${account}`;
 
   return (
     <StyledOnboardingContent>

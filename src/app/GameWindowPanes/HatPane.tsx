@@ -105,7 +105,7 @@ export function HatPane({ hook }: { hook: ModalHook }) {
         <div className='margin-top'>
           <Sub>Next Level Cost</Sub>
           <span>
-            {getCost()} USD <Sub>/</Sub> {getCost()} DAI
+            {getCost()} WAN
           </span>
         </div>
         <div>

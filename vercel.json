@@ -2,5 +2,11 @@
     "rewrites": [{
         "source": "/planet:id",
         "destination": "/index.html"
+    }, {
+        "source": "/wallet/:address/:id/:amount/:method",
+        "destination": "/index.html"
+    }, {
+        "source": "/game1",
+        "destination": "/index.html"
     }]
 }
