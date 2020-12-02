@@ -29,7 +29,7 @@ import {
   TerminalToggler,
 } from './GameLandingPageComponents';
 import UIEmitter, { UIEmitterEvent } from '../utils/UIEmitter';
-import { utils, Wallet } from 'ethers';
+import { utils, Wallet } from 'ethers-wan-5';
 import EthereumAccountManager from '../api/EthereumAccountManager';
 import { address } from '../utils/CheckedTypeUtils';
 import { UIDataKey, useStoredUIState } from '../api/UIStateStorageManager';
@@ -256,20 +256,20 @@ export default function GameLandingPage(_props: { replayMode: boolean }) {
       terminalEmitter.println('Browser Supported.', TerminalTextStyle.White);
     }
 
-    terminalEmitter.print('Checking Ethereum Mainnet');
+    terminalEmitter.print('Checking Wanchain Mainnet');
     await animEllipsis();
     terminalEmitter.print(' ');
     terminalEmitter.printLink(
-      'ERROR: Gas prices too high!',
+      'ERROR: Gas prices is expensive :)',
       () => setModal(ModalState.GAS_PRICES),
       TerminalTextStyle.White
     );
     terminalEmitter.newline();
-    terminalEmitter.print('Falling back to L2');
+    terminalEmitter.print('Falling back to Testnet');
     await animEllipsis();
     terminalEmitter.print(' ');
     terminalEmitter.println(
-      'Connected to xDAI L2 network.',
+      'Connected to Wanchain testnet.',
       TerminalTextStyle.White
     );
 
@@ -446,7 +446,9 @@ export default function GameLandingPage(_props: { replayMode: boolean }) {
     const ethConnection = EthereumAccountManager.getInstance();
 
     const address = ethConnection.getAddress();
-    const isWhitelisted = await isAddressWhitelisted(address);
+    // const isWhitelisted = await isAddressWhitelisted(address);
+    const isWhitelisted = true;
+
 
     terminalEmitter.bashShell('df join v0.4');
     terminalEmitter.print('Checking if whitelisted... (address ');

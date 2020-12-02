@@ -24,7 +24,7 @@ import { SubmittedTx } from '../_types/darkforest/api/ContractsAPITypes';
 const isProd = process.env.NODE_ENV === 'production';
 const contractAddress = isProd
   ? require('../utils/prod_contract_addr').contractAddress
-  : require('../utils/local_contract_addr').contractAddress;
+  : require('../utils/prod_contract_addr').contractAddress;
 
 enum ObjectStore {
   DEFAULT = 'default',

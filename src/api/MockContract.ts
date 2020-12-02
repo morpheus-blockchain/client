@@ -1,5 +1,5 @@
-import { Listener, TransactionReceipt } from '@ethersproject/providers';
-import { BigNumber as EthersBN } from 'ethers';
+import { Listener, TransactionReceipt } from '@wansproject/providers';
+import { BigNumber as EthersBN } from 'ethers-wan-5';
 import io from 'socket.io-client';
 import {
   MockchainEvents,
@@ -15,9 +15,9 @@ import {
   AbstractProvider,
 } from '../api/AbtractContract';
 //import EthereumAPI from './EthereumAPI';
-// NOTE: DO NOT IMPORT FROM ETHERS SUBPATHS. see https://github.com/ethers-io/ethers.js/issues/349 (these imports trip up webpack)
+// NOTE: DO NOT IMPORT FROM ETHERS SUBPATHS. see https://github.com/ethers-wan-5-io/ethers-wan-5.js/issues/349 (these imports trip up webpack)
 // for example, the below is bad!
-// import {TransactionReceipt, Provider, TransactionResponse, Web3Provider} from "ethers/providers";
+// import {TransactionReceipt, Provider, TransactionResponse, Web3Provider} from "ethers-wan-5/providers";
 import { ClientMockchainData } from '../_types/darkforest/api/ContractsAPITypes';
 
 const post = (url, body) => {

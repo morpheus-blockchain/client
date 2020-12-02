@@ -1,6 +1,6 @@
 import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import GameUIManager from '../app/board/GameUIManager';
-import { contractAddress } from '../utils/local_contract_addr';
+import { contractAddress } from '../utils/prod_contract_addr';
 import { EthAddress } from '../_types/global/GlobalTypes';
 
 export enum UIDataKey {

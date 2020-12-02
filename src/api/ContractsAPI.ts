@@ -10,16 +10,16 @@ import {
   Upgrade,
   SpaceType,
 } from '../_types/global/GlobalTypes';
-// NOTE: DO NOT IMPORT FROM ETHERS SUBPATHS. see https://github.com/ethers-io/ethers.js/issues/349 (these imports trip up webpack)
+// NOTE: DO NOT IMPORT FROM ETHERS SUBPATHS. see https://github.com/ethers-wan-5-io/ethers-wan-5.js/issues/349 (these imports trip up webpack)
 // in particular, the below is bad!
-// import {TransactionReceipt, Provider, TransactionResponse, Web3Provider} from "ethers/providers";
+// import {TransactionReceipt, Provider, TransactionResponse, Web3Provider} from "ethers-wan-5/providers";
 import {
   Contract,
   providers,
   utils,
   Event,
   BigNumber as EthersBN,
-} from 'ethers';
+} from 'ethers-wan-5';
 import _ from 'lodash';
 
 import {

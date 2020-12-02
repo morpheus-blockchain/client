@@ -2,7 +2,7 @@ import { EthAddress, LocationId } from '../_types/global/GlobalTypes';
 import * as bigInt from 'big-integer';
 import { LOCATION_ID_UB } from './constants';
 import { BigInteger } from 'big-integer';
-import { BigNumber as EthersBN } from 'ethers';
+import { BigNumber as EthersBN } from 'ethers-wan-5';
 
 // constructors for specific types
 // this pattern ensures that LocationIds and Addresses can only be initialized through constructors that do

@@ -1,6 +1,6 @@
 import * as stringify from 'json-stable-stringify';
-import { JsonRpcProvider, TransactionReceipt } from '@ethersproject/providers';
-import { providers, Contract, Wallet, utils, ContractInterface } from 'ethers';
+import { JsonRpcProvider, TransactionReceipt } from '@wansproject/providers';
+import { providers, Contract, Wallet, utils, ContractInterface } from 'ethers-wan-5';
 import { EthAddress } from '../_types/global/GlobalTypes';
 import { address } from '../utils/CheckedTypeUtils';
 import { EventEmitter } from 'events';
@@ -22,7 +22,7 @@ class EthereumAccountManager extends EventEmitter {
     if (isProd) {
       url =
         localStorage.getItem('XDAI_RPC_ENDPOINT') ||
-        'https://rpc.xdaichain.com/';
+        'https://gwan-ssl.wandevs.org:46891';
     } else {
       url = 'http://localhost:8545';
     }
@@ -68,7 +68,7 @@ class EthereumAccountManager extends EventEmitter {
       this.emit('ChangedRPCEndpoint');
     } catch (e) {
       console.error(`error setting rpc endpoint: ${e}`);
-      this.setRpcEndpoint('https://rpc.xdaichain.com/');
+      this.setRpcEndpoint('https://gwan-ssl.wandevs.org:46891');
       return;
     }
   }
@@ -90,9 +90,10 @@ class EthereumAccountManager extends EventEmitter {
     ).abi;
 
     const isProd = process.env.NODE_ENV === 'production';
+    console.log('isProd', isProd);
     const contractAddress = isProd
       ? require('../utils/prod_contract_addr').contractAddress
-      : require('../utils/local_contract_addr').contractAddress;
+      : require('../utils/prod_contract_addr').contractAddress;
 
     return this.loadContract(contractAddress, contractABI);
   }
