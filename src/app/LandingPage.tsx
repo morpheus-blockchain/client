@@ -62,7 +62,7 @@ const links = {
   email: 'mailto:contact@zkga.me',
   blog: 'https://blog.zkga.me/',
   telegram: 'https://t.me/zk_forest',
-  github: 'https://github.com/darkforest-eth',
+  github: 'https://github.com/dark-forest-wan',
 };
 
 // note: prefer styled-components when possible because semantically easier to debug
