@@ -113,7 +113,7 @@ export function HatPane({ hook }: { hook: ModalHook }) {
           <span>{balance} WAN</span>
         </div>
         <div>
-          <a onClick={() => window.open('https://blog.zkga.me/df-04-faq')}>
+          <a onClick={() => window.open('https://www.binance.com/')}>
             <u>Get More WAN</u>
           </a>
         </div>
