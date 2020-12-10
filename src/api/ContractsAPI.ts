@@ -739,7 +739,7 @@ class ContractsAPI extends EventEmitter {
 
     const arrivalsUnflattened = await aggregateBulkGetter<QueuedArrival[]>(
       nPlanets,
-      1000,
+      100,
       async (start, end) => {
         return (
           await contract.bulkGetPlanetArrivals(start, end)
@@ -762,7 +762,7 @@ class ContractsAPI extends EventEmitter {
     terminalEmitter.println('(4/6) Getting planet IDs...');
     const planetIds = await aggregateBulkGetter<BigInteger>(
       nPlanets,
-      2000,
+      200,
       async (start, end) => await contract.bulkGetPlanetIds(start, end),
       true
     );
@@ -771,7 +771,7 @@ class ContractsAPI extends EventEmitter {
       RawPlanetExtendedInfo
     >(
       nPlanets,
-      1000,
+      100,
       async (start, end) =>
         await contract.bulkGetPlanetsExtendedInfo(start, end),
       true
@@ -779,7 +779,7 @@ class ContractsAPI extends EventEmitter {
     terminalEmitter.println('(6/6) Getting planet data...');
     const rawPlanets = await aggregateBulkGetter<RawPlanetData>(
       nPlanets,
-      1000,
+      100,
       async (start, end) => await contract.bulkGetPlanets(start, end),
       true
     );

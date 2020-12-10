@@ -266,7 +266,8 @@ export const aggregateBulkGetter = async <T>(
               console.log(`retrieved ${start}-${end}.`);
               return res;
             })
-            .catch(() => {
+            .catch((err) => {
+              console.log('err', err);
               console.error(
                 `error occurred querying ${start}-${end}. retrying...`
               );
