@@ -98,6 +98,15 @@ const Footer = styled.div`
   }
 `;
 
+const Notice = styled.div`
+    line-height: 34px;
+    font-size: 20px;
+    width: 800px;
+    background: #ffffff2f;
+    border-radius: 20px;
+    padding: 20px;
+`
+
 const TextLinks = styled.div`
   & a {
     &:first-child {
@@ -260,9 +269,23 @@ export default function LandingPage() {
             <Typist {...typistProps}>Enter</Typist>
           </CTA>
         </Header>
+        
+        <Notice>
+          <p>A new and more exciting version of Dark Forest v0.5 is released. </p>
+          <p>V0.4 will also continue to run for a long time.</p>
+          <a href='https://darkforest-v5.wandevs.org' style={{fontSize: '30px', color: '#e8fa8d'}}>Click here to play v0.5 DarkForest</a>
+          <p>What's new for the v0.5:</p>
+          <p>- Added PLUGINS: You can now write and share arbitrary client tools and customizations.</p>
+          <p>- Upgraded Graphics: Planets are no longer solid-colored circles.</p>
+          <p>- Added Artifacts: Collect Dark Forest NFTs by exploring the universe.</p>
+          <p>- Improved performance: Sped up loading times, reduced frequency of errors and network failure.</p>
+          <p>- Support plant owner transfer in contract. </p>
+        </Notice>
 
         {/* Footer */}
         <Footer>
+
+        
           {/* Hall of Fame */}
           <div>
             <p style={styles.hofTitle}>Space Masters</p>
