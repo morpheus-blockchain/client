@@ -269,63 +269,9 @@ export default function LandingPage() {
             <Typist {...typistProps}>Enter</Typist>
           </CTA>
         </Header>
-        
-        <Notice>
-          <p>A new and more exciting version of Dark Forest v0.5 is released. </p>
-          <p>V0.4 will also continue to run for a long time.</p>
-          <a href='https://darkforest-v5.wandevs.org' style={{fontSize: '30px', color: '#e8fa8d'}}>Click here to play v0.5 DarkForest</a>
-          <p>What's new for the v0.5:</p>
-          <p>- Added PLUGINS: You can now write and share arbitrary client tools and customizations.</p>
-          <p>- Upgraded Graphics: Planets are no longer solid-colored circles.</p>
-          <p>- Added Artifacts: Collect Dark Forest NFTs by exploring the universe.</p>
-          <p>- Improved performance: Sped up loading times, reduced frequency of errors and network failure.</p>
-          <p>- Support plant owner transfer in contract. </p>
-        </Notice>
 
         {/* Footer */}
         <Footer>
-
-        
-          {/* Hall of Fame */}
-          <div>
-            <p style={styles.hofTitle}>Space Masters</p>
-            <table>
-              <tbody>
-                <TRow>
-                  <td>
-                    <HideSmall>v</HideSmall>0.1
-                  </td>
-                  <td>
-                    02/22/<HideSmall>20</HideSmall>20
-                  </td>
-                  <td>Dylan Field</td>
-                </TRow>
-                <TRow>
-                  <td>
-                    <HideSmall>v</HideSmall>0.2
-                  </td>
-                  <td>
-                    06/24/<HideSmall>20</HideSmall>20
-                  </td>
-                  <td>Nate Foss</td>
-                </TRow>
-                <TRow>
-                  <td>
-                    <HideSmall>v</HideSmall>0.3
-                  </td>
-                  <td>
-                    08/07/<HideSmall>20</HideSmall>20
-                  </td>
-                  <td>
-                    <a href='https://twitter.com/hideandcleanse'>
-                      @HideAndCleanse
-                    </a>
-                  </td>
-                </TRow>
-              </tbody>
-            </table>
-          </div>
-
           {/* Email CTA */}
           <EmailWrapper>
             <EmailCTA />
