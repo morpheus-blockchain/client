@@ -11,7 +11,7 @@ export { MIN_CHUNK_SIZE, MAX_CHUNK_SIZE, LOCATION_ID_UB };
 // no slash at end plz
 export const BLOCK_EXPLORER_URL = 'https://www.wanscan.org';
 
-export const XDAI_CHAIN_ID = 1;
+export const XDAI_CHAIN_ID = 888;
 
 export const HAT_SIZES = [
   'None',

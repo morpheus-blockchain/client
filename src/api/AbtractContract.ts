@@ -1,4 +1,4 @@
-import { Listener, TransactionReceipt } from '@wansproject/providers';
+import { Listener, TransactionReceipt } from '@ethersproject/providers';
 
 export interface AbstractContract {
   readonly address: string;

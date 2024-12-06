@@ -1,6 +1,6 @@
 import * as stringify from 'json-stable-stringify';
-import { JsonRpcProvider, TransactionReceipt } from '@wansproject/providers';
-import { providers, Contract, Wallet, utils, ContractInterface } from 'ethers-wan-5';
+import { JsonRpcProvider, TransactionReceipt } from '@ethersproject/providers';
+import { providers, Contract, Wallet, utils, ContractInterface } from 'ethers';
 import { EthAddress } from '../_types/global/GlobalTypes';
 import { address } from '../utils/CheckedTypeUtils';
 import { EventEmitter } from 'events';
@@ -57,7 +57,7 @@ class EthereumAccountManager extends EventEmitter {
           throw new Error('not a valid WAN RPC URL');
         }
       }
-      this.provider = newProvider;
+      this.provider = newProvider as any;
       this.provider.pollingInterval = 8000;
       if (this.signer) {
         this.signer = new Wallet(this.signer.privateKey, this.provider);

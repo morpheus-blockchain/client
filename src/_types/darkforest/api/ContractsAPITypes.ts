@@ -1,4 +1,4 @@
-import { BigNumber as EthersBN } from 'ethers-wan-5';
+import { BigNumber as EthersBN } from 'ethers';
 import { LocationId, Upgrade } from '../../global/GlobalTypes';
 
 // TODO write these types

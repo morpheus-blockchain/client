@@ -90,7 +90,7 @@ class GameManager extends EventEmitter implements AbstractGameManager {
     return this.contractConstants.PLANET_RARITY;
   }
 
-  private readonly endTimeSeconds: number = 1609372800;
+  private readonly endTimeSeconds: number = 2048976000;
 
   private constructor(
     account: EthAddress | null,
@@ -236,6 +236,7 @@ class GameManager extends EventEmitter implements AbstractGameManager {
         ContractsAPIEvent.TxInitFailed,
         (unconfirmedTx: UnconfirmedTx, e: Error) => {
           const terminalEmitter = TerminalEmitter.getInstance();
+          console.log('error', e);
           terminalEmitter.println(
             `[TX ERROR]: ${e.message.slice(0, 10000)}`,
             TerminalTextStyle.Red,

@@ -29,7 +29,7 @@ import {
   TerminalToggler,
 } from './GameLandingPageComponents';
 import UIEmitter, { UIEmitterEvent } from '../utils/UIEmitter';
-import { utils, Wallet } from 'ethers-wan-5';
+import { utils, Wallet } from 'ethers';
 import EthereumAccountManager from '../api/EthereumAccountManager';
 import { address } from '../utils/CheckedTypeUtils';
 import { UIDataKey, useStoredUIState } from '../api/UIStateStorageManager';

@@ -10,16 +10,16 @@ import {
   Upgrade,
   SpaceType,
 } from '../_types/global/GlobalTypes';
-// NOTE: DO NOT IMPORT FROM ETHERS SUBPATHS. see https://github.com/ethers-wan-5-io/ethers-wan-5.js/issues/349 (these imports trip up webpack)
+// NOTE: DO NOT IMPORT FROM ETHERS SUBPATHS. see https://github.com/ethers-io/ethers.js/issues/349 (these imports trip up webpack)
 // in particular, the below is bad!
-// import {TransactionReceipt, Provider, TransactionResponse, Web3Provider} from "ethers-wan-5/providers";
+// import {TransactionReceipt, Provider, TransactionResponse, Web3Provider} from "ethers/providers";
 import {
   Contract,
   providers,
   utils,
   Event,
   BigNumber as EthersBN,
-} from 'ethers-wan-5';
+} from 'ethers';
 import _ from 'lodash';
 
 import {
@@ -196,16 +196,19 @@ class TxExecutor extends EventEmitter {
       const balance = await ethConnection.getBalance(
         ethConnection.getAddress()
       );
+      console.log('balance', balance);
       if (balance < 0.002) {
         const notifsManager = NotificationManager.getInstance();
         notifsManager.balanceEmpty();
         throw new Error('WAN balance too low!');
       }
-
       if (Date.now() - this.nonceLastUpdated > 30000) {
         this.nonce = await EthereumAccountManager.getInstance().getNonce();
       }
+      console.log('nonce', this.nonce);
       await this.popupConfirmationWindow(txRequest);
+      console.log('approved');
+      let res;
       try {
         const res = await txRequest.contract[txRequest.method](
           ...txRequest.args,
@@ -218,9 +221,13 @@ class TxExecutor extends EventEmitter {
         this.nonceLastUpdated = Date.now();
         this.emit(txRequest.actionId, res);
       } catch (e) {
-        console.error('error while submitting tx:');
-        console.error(e);
-        throw new Error('Unknown error occurred.');
+        if (!e.message.includes('Transaction hash mismatch')) {
+          console.error('error while submitting tx:');
+          console.error(e);
+          throw new Error('Unknown error occurred.');
+        } else {
+          this.emit(txRequest.actionId, res);
+        }
       }
     } catch (e) {
       this.emit(txRequest.actionId, undefined, e);
